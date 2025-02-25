@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen de Archivos</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Predicción Electoral</h1>
+        <p class="subtitle">Sube un archivo (xlsx) para obtener un resumen.</p>
+
+        <div class="upload-section">
+            <label for="file-input" class="custom-file-upload">
+                <span id="file-label">Seleccionar Archivo</span>
+            </label>
+            <input type="file" id="file-input" accept=".xlsx">
+            <input type="number" id="num-rows-input" placeholder="Número de filas (por defecto 10)" min="1">
+            <button id="summarize-button" class="hidden">Generar Predicción Electoral</button>
+        </div>
+
+        <div id="loading" class="hidden">
+            <div class="loader"></div>
+            <p>Generando resumen...</p>
+        </div>
+
+        <div id="result" class="hidden">
+            <h2>Resumen electoral:</h2>
+            <p id="result-text"></p>
+            <p id="conclusion-text"></p>
+        </div>
+
+        <!-- Sección del chatbot -->
+        <div id="chat-section">
+            <h2>Chatbot</h2>
+            <div id="chat-box">
+                <div id="chat-messages"></div>
+                <input type="text" id="chat-input" placeholder="Escribe tu pregunta aquí...">
+                <button id="send-button">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
